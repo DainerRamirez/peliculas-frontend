@@ -6,6 +6,7 @@ import { GeneroVista } from './components/generos/GeneroVista'
 import { ProductoraVista } from './components/productoras/ProductoraVista'
 import { MultimediaVista } from './components/multimedia/MultimediaVista'
 import { TipoVista } from './components/tipos/TipoVista'
+import { MultimediaUpdate } from "./components/multimedia/MultimediaUpdate";
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/generos' component={GeneroVista} />
         <Route exact path='/productoras' component={ProductoraVista} />
         <Route exact path='/tipos' component={TipoVista} />
+        <Route exact path='/multimedias/edit/:multimediaId' component={ MultimediaUpdate } />
         <Redirect to='/' />
       </Switch>}
 </Router>

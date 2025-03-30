@@ -32,6 +32,14 @@ const deleteMultimedia = (multimediaId, data) => {
     });
 }
 
+const getMultimediaForId = (multimediaId) => {
+    return axiosInstance.get(`multimedia/${multimediaId}`,  {
+        header: {
+            'Content-type': 'application/json'
+        }
+    });
+}
+
 export {
-    getMultimedias, createMultimedia, updateMultimedia, deleteMultimedia
+    getMultimedias, createMultimedia, updateMultimedia, deleteMultimedia, getMultimediaForId
 }
