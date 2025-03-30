@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import  { getMultimedias } from '../../services/multimediaService'
 import { MultimediaCard } from '../multimedia/MultimediaCard';
 import { MultimediaNew } from './MultimediaNew';
+import Swal from 'sweetalert2';
 
 export const MultimediaVista = () => {
 
@@ -11,15 +12,19 @@ export const MultimediaVista = () => {
   const listMultimedias = async () => {
   
   try {
-
+    Swal.fire({
+    allowOutsideClick: false,
+    text: 'Cargando...'
+  });
+  Swal.showLoading();
     const { data } = await getMultimedias();
-    console.log(data);
+    Swal.close();
     setMultimedias(data);
 
 
   } catch(error) {
     console.log(error);
-    
+    Swal.close();
   }
 } 
 
